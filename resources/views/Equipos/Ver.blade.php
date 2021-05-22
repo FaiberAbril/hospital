@@ -7,6 +7,16 @@
 
 @section('content')
  <div class="container callout callout-info">
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+    	<p>Corrige los siguientes errores:</p>
+        <ul>
+            @foreach ($errors->all() as $message)
+                <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <div class="row ">
         <h1 style="margin-left: 10%;">Hoja de Vida Equipo Biomedico</h1>
         <div class="col-12 col-sm-6">

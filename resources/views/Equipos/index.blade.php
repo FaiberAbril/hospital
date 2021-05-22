@@ -13,15 +13,16 @@
         <i class="fas fa-cogs"></i> Nuevo Equipo Biomedico
     </a>
 
-    @if($errors->any())
-      <div class="alert alert-danger">
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+    	<p>Corrige los siguientes errores:</p>
         <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
+            @foreach ($errors->all() as $message)
+                <li>{{ $message }}</li>
             @endforeach
         </ul>
-      </div>
-    @endif
+    </div>
+@endif
 
     <div class="card card-success">
         <div class="card-header">
@@ -54,7 +55,7 @@
                         <td>{{$equipo->series}}</td>
                         <td>
                             <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
-                            <a href="" class="btn btn-success">Mantenimiento</a>
+                            <a href="/Mantenimiento" class="btn btn-success">Mantenimiento</a>
 
                             <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
                                 @csrf
@@ -91,15 +92,6 @@ $(document).ready(function() {
     }
   });
 });
-
-$(document).ready(function() {
-  $('#equipostabla').DataTable({
-    "language": {
-      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-    }
-  });
-});
-
 </script>
 
 @stop

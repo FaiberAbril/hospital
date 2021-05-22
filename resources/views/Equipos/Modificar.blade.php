@@ -17,7 +17,7 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="imagen" name="imagen">
+                <input type="file" class="custom-file-input" id="imagen" name="imagen" value="{{$equipos->imagen}}">
                 <label class="custom-file-label" for="imagen">Choose file</label>
 
             </div>

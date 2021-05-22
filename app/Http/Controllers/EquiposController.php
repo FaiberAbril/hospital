@@ -120,16 +120,18 @@ class EquiposController extends Controller
     {
         $equipos = Equipo::find($id);
         $file = $request->file('imagen');
-        $filename = time()."-".$file->getClientOriginalName();
+        
 
         if($request->hasFile('imagen')){
-            if($filename != $equipos->imagen ){
-                unlink($equipos->imagen);
+            $filename = $file->getClientOriginalName();
+            if($filename != $equipos->imagen ){      
+                unlink($equipo->imagen);          
                 $destino = 'img/';                
+                $filename = time()."-".$file->getClientOriginalName();
                 $subir  = $request->file('imagen')->move('img',$filename);
                 $equipos->imagen = $destino.$filename;
             }else{
-        
+                $equipos->imagen = $destino.$filename;
             }
         }
 

@@ -14,7 +14,15 @@ class CreateMantenimientosTable extends Migration
     public function up()
     {
         Schema::create('mantenimientos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->date('FechaMantenimiento')->nullable();
+            $table->string('TipoMantenimiento', 20)->nullable();
+            $table->string('Fallas', 20)->nullable();
+            $table->string('TrabajoRealizado', 100)->nullable();
+            $table->string('descripcion', 100)->nullable();
+            $table->string('observacion', 100)->nullable();
+            $table->unsignedBigInteger('equipo_id');
+            $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');  
             $table->timestamps();
         });
     }
