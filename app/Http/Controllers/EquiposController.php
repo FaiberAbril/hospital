@@ -105,7 +105,8 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-        //
+        $equipos = Equipo::find($id);
+        return view('Equipos.Modificar')->with('equipos',$equipos);
     }
 
     /**

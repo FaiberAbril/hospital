@@ -79,7 +79,7 @@
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-4 col-form-label">Modelo</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="Modelo" name="Modelo">
+                              <input type="text" class="form-control" id="modelo" name="modelo">
                             </div>
                           </div>
                     </div>
@@ -87,7 +87,7 @@
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-4 col-form-label">Serie</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="serie" name="serie" >
+                              <input type="text" class="form-control" id="series" name="series" >
                             </div>
                           </div>
                     </div>
