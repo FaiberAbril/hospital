@@ -24,7 +24,7 @@ class CreateEquiposTable extends Migration
             $table->string('activo', 100)->nullable();
             $table->string('fabrica', 100)->nullable();
             $table->string('Proveedor', 100)->nullable();
-            $table->string('Tel Proveedor', 100)->nullable();
+            $table->string('TelProveedor', 100)->nullable();
             $table->date('FechaCompra')->nullable();
             $table->integer('TiempoGarantia')->nullable();
             $table->integer('ciclovida')->nullable();
@@ -41,7 +41,10 @@ class CreateEquiposTable extends Migration
             $table->string('mantenimiento', 100)->nullable();
             $table->string('preventivo', 100)->nullable();
             $table->string('manual', 100)->nullable();
-            $table->string('anexo', 100)->nullable();
+            $table->string('anexonombre', 100)->nullable();
+            $table->string('anexoserie', 100)->nullable();
+            $table->string('anexomodelo', 100)->nullable();
+            $table->string('anexoactivo', 100)->nullable();
             $table->timestamps();
         });
     }

@@ -37,7 +37,9 @@ class EquiposController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipos 
+
+
     }
 
     /**
