@@ -347,7 +347,7 @@
                   <option value="MENSUAL">MENSUAL</option>
                   <option value="SEMESTRAL">SEMESTRAL</option>
                   <option value="TRIMESTRAL">TRIMESTRAL</option>
-                  <option value="ANUL">ANUL</option>
+                  <option value="ANUAL">ANUAL</option>
                 </select>
               </div>
 
