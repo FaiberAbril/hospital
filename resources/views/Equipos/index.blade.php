@@ -13,6 +13,16 @@
         <i class="fas fa-cogs"></i> Nuevo Equipo Biomedico
     </a>
 
+    @if($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div>
+    @endif
+
     <div class="card card-success">
         <div class="card-header">
             <h3 class="card-title">Equipos Biomedicos</h3>
@@ -23,6 +33,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Area</th>
                         <th scope="col">Numero de Activo</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Marca</th>
@@ -35,19 +46,20 @@
                     @foreach($equipos as $equipo)
                     <tr>
                         <td>{{$equipo->id}}</td>
+                        <td>{{$equipo->area}}</td>
                         <td>{{$equipo->activo}}</td>
-                        <td>{{$equipo->Nombre}}</td>
-                        <td>{{$equipo->Marca}}</td>
-                        <td>{{$equipo->Modelo}}</td>
-                        <td>{{$equipo->serie}}</td>
+                        <td>{{$equipo->nombre}}</td>
+                        <td>{{$equipo->marca}}</td>
+                        <td>{{$equipo->modelo}}</td>
+                        <td>{{$equipo->series}}</td>
                         <td>
-                            <a href="{{ route('Equipos.destroy',$equipo->id) }}" class="btn btn-info">Visualizar</a>
+                            <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
                             <a href="" class="btn btn-success">Mantenimiento</a>
 
-                            <form action="{{ route('Equipos.create') }}" method="POST">
+                            <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                <button type="submit" class="btn btn-danger" >Eliminar</button>
                             </form>
 
                         </td>
@@ -67,7 +79,17 @@
 @stop
 
 @section('js')
-<script> $(document).ready(function() {
-    $('#equipostabla').DataTable();
-} );</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
+
+<script> 
+$(document).ready(function() {
+  $('#equipostabla').DataTable({
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    }
+  });
+});</script>
+
 @stop

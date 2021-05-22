@@ -432,8 +432,8 @@
         <!-- /.card-header -->
         <div class="card-body">
 
-            <a href="/Equipos" class="btn btn-secondary">Volver</a>
-            <button type="submit" class="btn btn-primary">guardar</button>
+            <a href="/Equipos" class="btn btn-primary">Volver</a>
+            <button type="submit" class="btn btn-success">Guardar</button>
 
 
 
