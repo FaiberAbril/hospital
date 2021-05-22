@@ -59,7 +59,7 @@
                             <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger" >Eliminar</button>
+                                <button type="submit" class="btn btn-danger" id="eliminar">Eliminar</button>
                             </form>
 
                         </td>
@@ -90,6 +90,16 @@ $(document).ready(function() {
       "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
     }
   });
-});</script>
+});
+
+$(document).ready(function() {
+  $('#equipostabla').DataTable({
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    }
+  });
+});
+
+</script>
 
 @stop

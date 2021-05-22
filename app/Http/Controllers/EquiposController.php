@@ -118,17 +118,18 @@ class EquiposController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $equipos = new Equipo();
+        $equipos = Equipo::find($id);
         $file = $request->file('imagen');
-        
+        $filename = time()."-".$file->getClientOriginalName();
+
         if($request->hasFile('imagen')){
-            if($file->getClientOriginalName() != $equipos->imagen ){
-                $destino = 'img/';
-                $filename = time()."-".$file->getClientOriginalName();
+            if($filename != $equipos->imagen ){
+                unlink($equipos->imagen);
+                $destino = 'img/';                
                 $subir  = $request->file('imagen')->move('img',$filename);
                 $equipos->imagen = $destino.$filename;
             }else{
-                $equipos->imagen = 
+        
             }
         }
 
@@ -178,8 +179,9 @@ class EquiposController extends Controller
     public function destroy($id)
     {
         $equipo = Equipo::findOrFail($id);
-       
         $equipo->delete();
+
+        unlink($equipo->imagen);
         return redirect('/Equipos')->with('completed', 'Equipo Biomedico Eliminado');
   
     }
