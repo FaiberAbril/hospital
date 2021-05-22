@@ -14,7 +14,34 @@ class CreateEquiposTable extends Migration
     public function up()
     {
         Schema::create('equipos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('imagen', 100)->nullable();
+            $table->string('area', 100)->nullable();
+            $table->string('nombre', 100)->nullable();
+            $table->string('marca', 100)->nullable();
+            $table->string('modelo', 100)->nullable();
+            $table->string('series', 100)->nullable();
+            $table->string('activo', 100)->nullable();
+            $table->string('fabrica', 100)->nullable();
+            $table->string('Proveedor', 100)->nullable();
+            $table->string('Tel Proveedor', 100)->nullable();
+            $table->date('FechaCompra')->nullable();
+            $table->integer('TiempoGarantia')->nullable();
+            $table->integer('ciclovida')->nullable();
+            $table->string('fuenteAlimentacion', 100)->nullable();
+            $table->string('voltaje', 100)->nullable();
+            $table->string('corriente', 100)->nullable();
+            $table->string('frecuencia', 100)->nullable();
+            $table->string('potencia', 100)->nullable();
+            $table->string('presion', 100)->nullable();
+            $table->string('capacidad', 100)->nullable();
+            $table->string('riesgo', 100)->nullable();
+            $table->string('uso', 100)->nullable();
+            $table->string('propiedad', 100)->nullable();
+            $table->string('mantenimiento', 100)->nullable();
+            $table->string('preventivo', 100)->nullable();
+            $table->string('manual', 100)->nullable();
+            $table->string('anexo', 100)->nullable();
             $table->timestamps();
         });
     }

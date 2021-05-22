@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Equipo;
 
 class EquiposController extends Controller
 {
@@ -13,7 +14,9 @@ class EquiposController extends Controller
      */
     public function index()
     {
-        return view('Equipos.index');
+        $equipos = Equipo::all();
+        return view('Equipos.index')->with('equipos',$equipos);
+    
     }
 
     /**
@@ -23,7 +26,7 @@ class EquiposController extends Controller
      */
     public function create()
     {
-        //
+         return view('Equipos.create');
     }
 
     /**
