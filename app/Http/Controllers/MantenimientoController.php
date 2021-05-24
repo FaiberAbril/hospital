@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Equipo;
+use App\Models\Mantenimiento;
 
 class MantenimientoController extends Controller
 {
@@ -16,6 +18,12 @@ class MantenimientoController extends Controller
         //
     }
 
+    public function inicio($id)
+    {
+        $equipo = Equipo::find($id);
+        $mantenimientos = Mantenimiento::all();
+        return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -23,8 +31,15 @@ class MantenimientoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Mantenimiento.create');
     }
+
+    public function crear($id){
+        $equipo = Equipo::find($id);
+        return view('Mantenimiento.create')->with('equipo',$equipo);
+    }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -45,7 +60,7 @@ class MantenimientoController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

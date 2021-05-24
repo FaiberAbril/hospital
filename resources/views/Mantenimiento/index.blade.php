@@ -1,16 +1,33 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Mantenimiento')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Mantenimientos</h1>
 @stop
 
 @section('content')
 
-    <a class="btn btn-app bg-success" href="{{ route('Equipos.create') }}">
+
+<div class="row ">
+               <div class="col-12">
+            <div class="col-12">
+                <img src="{{asset('img/logoempresa.jpeg')}}" class="product-image" alt="Product Image" style="max-width: 400px; margin-left: 30%;">
+            </div>
+        </div>
+        <div class="col-12 text-center">
+                <h5>NIT. 900483816-1</h5>
+                <h5 >GLOBAL INGENIERIA SUMINISTROS Y TECNOLOGIA BIOMEDICA SAS</h5>
+                <h5>CALLE 23A # 10A  - 43 MALAGA SANTANDER</h5>
+                <hr>
+
+        </div>
+    </div>
+
+
+    <a class="btn btn-app bg-success" href="{{ route('Mantenimiento.crear',$equipo->id) }}">
         <span class="badge bg-green"></span>
-        <i class="fas fa-cogs"></i> Nuevo Equipo Biomedico
+        <i class="fas fa-cogs"></i> Realizar Mantenimiento
     </a>
 
     @if (count($errors) > 0)
@@ -24,9 +41,11 @@
     </div>
 @endif
 
+
+
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Equipos Biomedicos</h3>
+            <h4 class="card-title">Equipos Biomedico: {{$equipo->nombre}} y Esta Ubicado en el area de {{$equipo->area}} </h4>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -34,8 +53,8 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Area</th>
-                        <th scope="col">Numero de Activo</th>
+                        <th scope="col">Fecha Mantenimiento</th>
+                        <th scope="col">Tipo de Mantenimiento</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Marca</th>
                         <th scope="col">Modelo</th>
@@ -44,19 +63,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($equipos as $equipo)
+                    @foreach($mantenimientos as $mantenimiento)
                     <tr>
-                        <td>{{$equipo->id}}</td>
-                        <td>{{$equipo->area}}</td>
-                        <td>{{$equipo->activo}}</td>
-                        <td>{{$equipo->nombre}}</td>
-                        <td>{{$equipo->marca}}</td>
-                        <td>{{$equipo->modelo}}</td>
-                        <td>{{$equipo->series}}</td>
+                        <td>{{$mantenimiento->id}}</td>
+                        <td>{{$mantenimiento->FechaMantenimiento}}</td>
+                        <td>{{$mantenimiento->TipoMantenimiento}}</td>
+                        <td>{{$mantenimiento->Equipo->nombre}}</td>
+                        <td>{{$mantenimiento->Equipo->marca}}</td>
+                        <td>{{$mantenimiento->Equipo->modelo}}</td>
+                        <td>{{$mantenimiento->Equipo->series}}</td>
                         <td>
                             <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
-                            <a href="" class="btn btn-success">Mantenimiento</a>
-
                             <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

@@ -55,7 +55,7 @@
                         <td>{{$equipo->series}}</td>
                         <td>
                             <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
-                            <a href="/Mantenimiento" class="btn btn-success">Mantenimiento</a>
+                            <a href="Mantenimientos/{{$equipo->id}}" class="btn btn-success">Mantenimiento</a>
 
                             <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
                                 @csrf
