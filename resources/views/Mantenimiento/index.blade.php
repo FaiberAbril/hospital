@@ -73,8 +73,8 @@
                         <td>{{$mantenimiento->Equipo->modelo}}</td>
                         <td>{{$mantenimiento->Equipo->series}}</td>
                         <td>
-                            <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
-                            <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
+                            <a href="{{ route('MantenimientoVer.show',$mantenimiento->id) }}" class="btn btn-info">Visualizar</a>
+                            <form action="{{ route('Mantenimiento.destroy',$mantenimiento->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" id="eliminar">Eliminar</button>

@@ -23,8 +23,9 @@ Route::resource('Equipos', EquiposController::class);
 Route::resource('Mantenimiento', MantenimientoController::class);
 
 Route::get('Mantenimientos/{Mantenimiento}', [MantenimientoController::class, 'inicio'])->name('Mantenimiento.inicio');
-
 Route::get('Mantenimiento/{Mantenimiento}', [MantenimientoController::class, 'crear'])->name('Mantenimiento.crear');
+Route::get('MantenimientoVer/{Mantenimiento}', [MantenimientoController::class, 'show'])->name('MantenimientoVer.show');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

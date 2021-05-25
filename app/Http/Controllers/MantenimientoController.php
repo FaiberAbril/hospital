@@ -55,7 +55,6 @@ class MantenimientoController extends Controller
         $mantenimientos->FechaMantenimiento = $request->get('FechaMantenimiento');
         $mantenimientos->TipoMantenimiento = $request->get('TipoMantenimiento');
         $mantenimientos->Fallas = $request->get('Fallas');
-        $mantenimientos->TrabajoRealizado = $request->get('TrabajoRealizado');
         $mantenimientos->descripcion = $request->get('descripcion');
         $mantenimientos->observacion = $request->get('observacion');
         $mantenimientos->Repuesto = $request->get('Repuesto');
@@ -66,15 +65,18 @@ class MantenimientoController extends Controller
         $mantenimientos->cantidadtres = $request->get('cantidadtres');
 
         $mantenimientos->equipo_id = $request->get('equipo_id');
+        $checkbox = "";
 
-        if(!empty($request->input('TipoMantenimiento'))){
-            $checkbox = join (',',$request->input('TipoMantenimiento'));
+        if(!empty($request->input('TrabajoRealizado'))){
+            $checkbox = implode(",",$request->input('TrabajoRealizado'));
 
         }else{
             $checkbox = '';
         }
+        
+        $mantenimientos->TrabajoRealizado = $checkbox;
 
-        $equipos->save();
+        $mantenimientos->save();
 
         $equipo = Equipo::find($mantenimientos->equipo_id);
         $mantenimientos = Mantenimiento::where('equipo_id', $mantenimientos->equipo_id)->get();
@@ -91,7 +93,8 @@ class MantenimientoController extends Controller
      */
     public function show($id)
     {
-        
+        $mantenimientos = Mantenimiento::find($id);
+        return view('Mantenimiento.ver', compact('mantenimientos'));
     }
 
     /**
@@ -124,7 +127,17 @@ class MantenimientoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {       
+          
+        $mantenimientoaeliminar = Mantenimiento::findOrFail($id);
+        $idEquipo = $mantenimientoaeliminar->equipo_id;
+
+        $mantenimientoaeliminar->delete();
+
+
+        $equipo = Equipo::find($idEquipo);
+        $mantenimientos = Mantenimiento::where('equipo_id', $idEquipo)->get();
+
+        return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
     }
 }
