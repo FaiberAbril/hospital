@@ -21,7 +21,7 @@ class MantenimientoController extends Controller
     public function inicio($id)
     {
         $equipo = Equipo::find($id);
-        $mantenimientos = Mantenimiento::all();
+        $mantenimientos = Mantenimiento::where('equipo_id', $id)->get();
         return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
     }
     /**
@@ -49,7 +49,38 @@ class MantenimientoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $mantenimientos = new Mantenimiento();
+
+        $mantenimientos->FechaMantenimiento = $request->get('FechaMantenimiento');
+        $mantenimientos->TipoMantenimiento = $request->get('TipoMantenimiento');
+        $mantenimientos->Fallas = $request->get('Fallas');
+        $mantenimientos->TrabajoRealizado = $request->get('TrabajoRealizado');
+        $mantenimientos->descripcion = $request->get('descripcion');
+        $mantenimientos->observacion = $request->get('observacion');
+        $mantenimientos->Repuesto = $request->get('Repuesto');
+        $mantenimientos->cantidad = $request->get('cantidad');
+        $mantenimientos->Repuestodos = $request->get('Repuestodos');
+        $mantenimientos->cantidaddos = $request->get('cantidaddos');
+        $mantenimientos->Repuestotres = $request->get('Repuestotres');
+        $mantenimientos->cantidadtres = $request->get('cantidadtres');
+
+        $mantenimientos->equipo_id = $request->get('equipo_id');
+
+        if(!empty($request->input('TipoMantenimiento'))){
+            $checkbox = join (',',$request->input('TipoMantenimiento'));
+
+        }else{
+            $checkbox = '';
+        }
+
+        $equipos->save();
+
+        $equipo = Equipo::find($mantenimientos->equipo_id);
+        $mantenimientos = Mantenimiento::where('equipo_id', $mantenimientos->equipo_id)->get();
+        return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
+
+
     }
 
     /**

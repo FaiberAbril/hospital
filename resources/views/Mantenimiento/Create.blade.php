@@ -128,26 +128,65 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="container">
+            <div class="row">
+            <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="Prueba de encendido" name="TipoMantenimiento[]" >
+                          <label for="customCheckbox1" class="custom-control-label">Prueba de encendido</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="customCheckbox2" value="limpieza interna equipo" name="TipoMantenimiento[]">
+                          <label for="customCheckbox2" class="custom-control-label">limpieza interna equipo</label>
+                        </div>      
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="customCheckbox3" value="Revisión de pantalla" name="TipoMantenimiento[]">
+                          <label for="customCheckbox3" class="custom-control-label">Revisión de pantalla</label>
+                        </div> 
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="customCheckbox4" value="Revisión Seguros" name="TipoMantenimiento[]">
+                          <label for="customCheckbox4" class="custom-control-label">Revisión Seguros</label>
+                        </div> 
+            </div>
+        </div>
+        <!-- /.card-body -->
+  </div>  
+            </div>
+
+
+     <div class="card card-success">
+        <div class="card-header">
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12">
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-4 col-form-label">Fallas</label>
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">Descripción</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="Fallas" name="Fallas" >
+                              <input type="text" class="form-control" id="descripcion" name="descripcion" >
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">Observación</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="observacion" name="observacion" >
                             </div>
                           </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
         <!-- /.card-body -->
     </div>
 
-
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Modulos Anexos</h3>
+          
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -155,17 +194,17 @@
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-4 col-form-label">Nombre</label>
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">Repuesto</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="anexonombre" name="anexonombre" >
+                              <input type="text" class="form-control" id="Repuesto" name="Repuesto" >
                             </div>
                           </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-4 col-form-label">Serie</label>
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">cantidad</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="anexoserie" name="anexoserie" >
+                              <input type="text" class="form-control" id="cantidad" name="cantidad" >
                             </div>
                           </div>
                     </div>
@@ -174,27 +213,48 @@
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-4 col-form-label">Modulo</label>
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">Repuesto</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="anexomodelo" name="anexomodelo" >
+                              <input type="text" class="form-control" id="Repuestodos" name="Repuestodos" >
                             </div>
                           </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de Activos</label>
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">cantidad</label>
                             <div class="col-sm-8">
-                              <input type="text" class="form-control" id="anexoactivo" name="anexoactivo" >
+                              <input type="text" class="form-control" id="cantidaddos" name="cantidaddos" >
                             </div>
                           </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">Repuesto</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="Repuestotres" name="Repuestotres" >
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">cantidad</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="cantidadtres" name="cantidadtres" >
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
         <!-- /.card-body -->
     </div>
 
+    <input type="hidden" name="equipo_id" value="{{$equipo->id}}">
 
     <div class="card card-success">
         <div class="card-header">

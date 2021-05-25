@@ -21,6 +21,12 @@ class CreateMantenimientosTable extends Migration
             $table->string('TrabajoRealizado', 100)->nullable();
             $table->string('descripcion', 100)->nullable();
             $table->string('observacion', 100)->nullable();
+            $table->string('Repuesto', 100)->nullable();
+            $table->integer('cantidad')->nullable();
+            $table->string('Repuestodos', 100)->nullable();
+            $table->integer('cantidaddos')->nullable();
+            $table->string('Repuestotres', 100)->nullable();
+            $table->integer('cantidadtres')->nullable();
             $table->unsignedBigInteger('equipo_id');
             $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');  
             $table->timestamps();
