@@ -8,21 +8,43 @@
 
 @section('content')
 
+@if (Session::has('Mantenimiento_creado'))
 
-<div class="row ">
-               <div class="col-12">
-            <div class="col-12">
-                <img src="{{asset('img/logoempresa.jpeg')}}" class="product-image" alt="Product Image" style="max-width: 400px; margin-left: 30%;">
-            </div>
-        </div>
-        <div class="col-12 text-center">
-                <h5>NIT. 900483816-1</h5>
-                <h5 >GLOBAL INGENIERIA SUMINISTROS Y TECNOLOGIA BIOMEDICA SAS</h5>
-                <h5>CALLE 23A # 10A  - 43 MALAGA SANTANDER</h5>
-                <hr>
+<div class="card bg-success">
+    <div class="card-header">
+        <h3 class="card-title">Success</h3>
 
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
         </div>
+        <!-- /.card-tools -->
     </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        {{session('Mantenimiento_creado') }}
+    </div>
+    <!-- /.card-body -->
+</div>
+@elseif(Session::has('Mantenimiento_Eliminiar'))
+
+<div class="card bg-danger">
+    <div class="card-header">
+        <h3 class="card-title">Danger</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- /.card-tools -->
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        {{session('Mantenimiento_Eliminiar') }}
+    </div>
+    <!-- /.card-body -->
+</div>
+@endif
 
 
     <a class="btn btn-app bg-success" href="{{ route('Mantenimiento.crear',$equipo->id) }}">
@@ -30,16 +52,7 @@
         <i class="fas fa-cogs"></i> Realizar Mantenimiento
     </a>
 
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-    	<p>Corrige los siguientes errores:</p>
-        <ul>
-            @foreach ($errors->all() as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
 
 
 

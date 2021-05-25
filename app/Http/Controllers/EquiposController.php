@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Equipo;
+use Illuminate\Support\Facades\Session;
 
 class EquiposController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -80,7 +85,9 @@ class EquiposController extends Controller
 
         $equipos->save();
        
-        return redirect('/Equipos')->with('completed', 'Equipo Biomedico Creado!');
+        $request->session()->flash('Equipo_Creado', 'El Equipo Biomedico ha sido creado con éxito');
+
+        return redirect('/Equipos');
 
     }
 
@@ -168,7 +175,9 @@ class EquiposController extends Controller
         $equipos->save();
        
         $equipos = Equipo::find($id);
-        return view('Equipos.ver')->with('equipos',$equipos)->with('completed', 'Equipo Biomedico Modificado');
+
+        $request->session()->flash('Equipo_Actualizado', 'El Equipo Biomedico ha sido Actualizado con éxito');
+        return view('Equipos.ver')->with('equipos',$equipos);
 
     }
 
@@ -184,7 +193,10 @@ class EquiposController extends Controller
         $equipo->delete();
 
         unlink($equipo->imagen);
-        return redirect('/Equipos')->with('completed', 'Equipo Biomedico Eliminado');
+     
+        session()->flash('Equipo_eliminado', 'El Equipo Biomedico ha sido eliminado con éxito');
+
+        return redirect('/Equipos');
   
     }
 }

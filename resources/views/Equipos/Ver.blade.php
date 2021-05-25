@@ -6,17 +6,29 @@
 @stop
 
 @section('content')
- <div class="container callout callout-info">
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-    	<p>Corrige los siguientes errores:</p>
-        <ul>
-            @foreach ($errors->all() as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-        </ul>
+
+@if (Session::has('Equipo_Actualizado'))
+
+<div class="card bg-success">
+    <div class="card-header">
+        <h3 class="card-title">Success</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- /.card-tools -->
     </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        {{session('Equipo_Actualizado') }}
+    </div>
+    <!-- /.card-body -->
+</div>
 @endif
+
+
+ <div class="container callout callout-info">
     <div class="row ">
         <h1 style="margin-left: 10%;">Hoja de Vida Equipo Biomedico</h1>
         <div class="col-12 col-sm-6">

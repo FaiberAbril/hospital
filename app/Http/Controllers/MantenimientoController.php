@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Equipo;
 use App\Models\Mantenimiento;
+use Illuminate\Support\Facades\Session;
 
 class MantenimientoController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,6 +40,7 @@ class MantenimientoController extends Controller
     }
 
     public function crear($id){
+        
         $equipo = Equipo::find($id);
         return view('Mantenimiento.create')->with('equipo',$equipo);
     }
@@ -80,6 +86,10 @@ class MantenimientoController extends Controller
 
         $equipo = Equipo::find($mantenimientos->equipo_id);
         $mantenimientos = Mantenimiento::where('equipo_id', $mantenimientos->equipo_id)->get();
+
+        $request->session()->flash('Mantenimiento_creado', 'Se Realizo mantenimiento');
+
+
         return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
 
 
@@ -137,6 +147,9 @@ class MantenimientoController extends Controller
 
         $equipo = Equipo::find($idEquipo);
         $mantenimientos = Mantenimiento::where('equipo_id', $idEquipo)->get();
+
+
+        $request->session()->flash('Mantenimiento_Eliminiar', 'Se elimino mantenimiento');
 
         return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
     }

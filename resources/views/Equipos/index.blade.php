@@ -8,70 +8,99 @@
 
 @section('content')
 
-    <a class="btn btn-app bg-success" href="{{ route('Equipos.create') }}">
-        <span class="badge bg-green"></span>
-        <i class="fas fa-cogs"></i> Nuevo Equipo Biomedico
-    </a>
+@if (Session::has('Equipo_Creado'))
 
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-    	<p>Corrige los siguientes errores:</p>
-        <ul>
-            @foreach ($errors->all() as $message)
-                <li>{{ $message }}</li>
-            @endforeach
-        </ul>
+<div class="card bg-success">
+    <div class="card-header">
+        <h3 class="card-title">Success</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- /.card-tools -->
     </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        {{session('Equipo_Creado') }}
+    </div>
+    <!-- /.card-body -->
+</div>
+@elseif(Session::has('Equipo_eliminado'))
+
+<div class="card bg-danger">
+    <div class="card-header">
+        <h3 class="card-title">Danger</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- /.card-tools -->
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        {{session('Equipo_eliminado') }}
+    </div>
+    <!-- /.card-body -->
+</div>
 @endif
 
-    <div class="card card-success">
-        <div class="card-header">
-            <h3 class="card-title">Equipos Biomedicos</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-            <table class="table table-striped" id="equipostabla">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Area</th>
-                        <th scope="col">Numero de Activo</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Marca</th>
-                        <th scope="col">Modelo</th>
-                        <th scope="col">Serie</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($equipos as $equipo)
-                    <tr>
-                        <td>{{$equipo->id}}</td>
-                        <td>{{$equipo->area}}</td>
-                        <td>{{$equipo->activo}}</td>
-                        <td>{{$equipo->nombre}}</td>
-                        <td>{{$equipo->marca}}</td>
-                        <td>{{$equipo->modelo}}</td>
-                        <td>{{$equipo->series}}</td>
-                        <td>
-                            <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
-                            <a href="Mantenimientos/{{$equipo->id}}" class="btn btn-success">Mantenimiento</a>
+<a class="btn btn-app bg-success" href="{{ route('Equipos.create') }}">
+    <span class="badge bg-green"></span>
+    <i class="fas fa-cogs"></i> Nuevo Equipo Biomedico
+</a>
 
-                            <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" id="eliminar">Eliminar</button>
-                            </form>
 
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
 
-        </div>
-        <!-- /.card-body -->
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">Equipos Biomedicos</h3>
     </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-striped" id="equipostabla">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Numero de Activo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Serie</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($equipos as $equipo)
+                <tr>
+                    <td>{{$equipo->id}}</td>
+                    <td>{{$equipo->area}}</td>
+                    <td>{{$equipo->activo}}</td>
+                    <td>{{$equipo->nombre}}</td>
+                    <td>{{$equipo->marca}}</td>
+                    <td>{{$equipo->modelo}}</td>
+                    <td>{{$equipo->series}}</td>
+                    <td>
+                        <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
+                        <a href="Mantenimientos/{{$equipo->id}}" class="btn btn-success">Mantenimiento</a>
+
+                        <form action="{{ route('Equipos.destroy',$equipo->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" id="eliminar">Eliminar</button>
+                        </form>
+
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    </div>
+    <!-- /.card-body -->
+</div>
 @stop
 
 @section('css')
@@ -84,14 +113,14 @@
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
 
-<script> 
-$(document).ready(function() {
-  $('#equipostabla').DataTable({
-    "language": {
-      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-    }
-  });
-});
+<script>
+    $(document).ready(function () {
+        $('#equipostabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            }
+        });
+    });
 </script>
 
 @stop
