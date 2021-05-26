@@ -149,7 +149,7 @@ class MantenimientoController extends Controller
         $mantenimientos = Mantenimiento::where('equipo_id', $idEquipo)->get();
 
 
-        $request->session()->flash('Mantenimiento_Eliminiar', 'Se elimino mantenimiento');
+        session()->flash('Mantenimiento_Eliminiar', 'Se elimino mantenimiento con Exito');
 
         return view('Mantenimiento.index', compact('equipo', 'mantenimientos'));
     }
