@@ -243,11 +243,6 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        [
-            'text' => 'Perfil',
-            'url'  => 'user/profile',
-            'icon' => 'fas fa-fw fa-user',
         ]
     ],
 
