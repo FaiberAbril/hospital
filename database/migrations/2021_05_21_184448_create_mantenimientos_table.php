@@ -18,7 +18,7 @@ class CreateMantenimientosTable extends Migration
             $table->date('FechaMantenimiento')->nullable();
             $table->string('TipoMantenimiento', 20)->nullable();
             $table->string('Fallas', 20)->nullable();
-            $table->string('TrabajoRealizado', 100)->nullable();
+            $table->string('TrabajoRealizado', 900)->nullable();
             $table->string('descripcion', 100)->nullable();
             $table->string('observacion', 100)->nullable();
             $table->string('Repuesto', 100)->nullable();

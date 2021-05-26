@@ -101,13 +101,13 @@
 
  <div class="container callout callout-info">
     <div class="row ">
-        <h2 style="margin-left: 10%;">Frecuencia de Mantenimiento Preventivo: <small>{{$equipos->mantenimiento}}</small></h2>
+        <h2 style="margin-left: 10%;">Frecuencia de Mantenimiento Preventivo: <small>{{$equipos->preventivo}}</small></h2>
     </div>
  </div>
 
  <div class="container callout callout-info">
     <div class="row ">
-        <h2 style="margin-left: 10%;">Manuales: <small>{{$equipos->preventivo}}</small></h2>
+        <h2 style="margin-left: 10%;">Manuales: <small>{{$equipos->manual}}</small></h2>
     </div>
  </div>
 

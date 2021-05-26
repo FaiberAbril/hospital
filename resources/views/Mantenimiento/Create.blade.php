@@ -187,11 +187,6 @@
                             <label for="customCheckbox11" class="custom-control-label">Revision accesorios</label>
                         </div>
                         <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="customCheckbox12"
-                                value="Revision accesorios" name="TrabajoRealizado[]">
-                            <label for="customCheckbox12" class="custom-control-label">Revision accesorios</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
                             <input class="custom-control-input" type="checkbox" id="customCheckbox13"
                                 value="Revision bateria" name="TrabajoRealizado[]">
                             <label for="customCheckbox13" class="custom-control-label">Revision bateria</label>
