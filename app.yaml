@@ -1,11 +1,15 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
+runtime: php74
 
-# The name of this app. Must be unique within a project.
-name: app
-
-# The type of the application to build.
-type: php:7.4
+env_variables:
+   APP_KEY: YOUR_APP_KEY
+   APP_STORAGE: /tmp
+   CACHE_DRIVER: database
+   SESSION_DRIVER: database
+   DB_DATABASE: hospital-315415:us-central1:root
+   DB_USERNAME: root
+   DB_PASSWORD: QAZxsw123
+   DB_SOCKET: "/cloudsql/hospital-315415:us-central1:root"
+   
 
 dependencies:
     php:
