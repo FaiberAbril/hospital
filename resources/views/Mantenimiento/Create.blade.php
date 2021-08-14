@@ -14,6 +14,100 @@
     @csrf
 
 
+    <div id="accordion">
+  <div class="card">
+
+
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          MANUAL DE PROCEDIMIENTO PARA EL MANTENIMIENTO DE EQUIPOS BIOMEDICOS.
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <div class="card-body">
+       <h3>PROCEDIMIENTO GENERAL</h3>
+       <p>El mantenimiento de equipos es una serie de ajustes, lubricaciones, limpieza, calibración análisis que se realiza 
+           de manera periódica, para minimizar el riesgo de fallo y asegurar la continua operación de los equipos, logrando que se 
+           encuentren en óptimas condiciones durante su tiempo de vida útil.</p>
+
+        <p>El mantenimiento de los equipos médicos provee los siguientes beneficios </p>
+
+        <ul class="list-group">
+            <li class="list-group-item">Prevención de fallas en los equipos o instalaciones</li>
+            <li class="list-group-item">Reducción del reemplazo de equipos durante su vida útil. </li>
+            <li class="list-group-item">Reducción de la cantidad de repuestos de reserva</li>
+            <li class="list-group-item">El buen estado de los equipos e instalaciones durante su vida útil</li>
+        </ul>
+
+        <h3 class="pt-2">FRECUENCIA DEL MANTENIMIENTO </h3>
+
+        <p>Un equipo médico debe estar sujeto a un programa de inspecciones, mantenimiento o verificación de su funcionamiento, 
+            sólo si existen varias razones que lo sustenten como: </p>
+       
+
+         <ul class="list-group">
+            <li class="list-group-item">1.	Prevenir fallas en el equipo o en las instalaciones eléctricas del establecimiento de salud</li>
+            <li class="list-group-item">2.	Mantener el buen estado del equipo.</li>
+            <li class="list-group-item">3.	Minimizar el tiempo del equipo fuera de funcionamiento. </li>
+            <li class="list-group-item">4.	Corregir problemas de operación menores, antes que ellos resulten en fallas mayores del sistema o resultados imprecisos. </li>
+            <li class="list-group-item">5.	Evitar reparaciones excesivamente costosas.</li>
+            <li class="list-group-item">6.	Producir un ahorro, de modo que el gasto en mantenimiento de un equipo durante su vida útil sea muy inferior a la adquisición de uno nuevo. </li>
+            <li class="list-group-item">7.	 Reducir la cantidad de repuestos de reserva. </li>
+            <li class="list-group-item">8.	Cumplir con códigos, estándares y regulaciones o las recomendaciones rigurosas de los fabricantes. </li>
+            <li class="list-group-item">7.	 Reducir la cantidad de repuestos de reserva. </li>
+        </ul>
+
+        <h3 class="pt-2">PROCEDIMIENTO GENERAL DE MANTENIMIENTO BIOMEDICO</h3>
+
+        <p>Un equipo médico debe estar sujeto a un programa de inspecciones, mantenimiento o verificación de su funcionamiento, sólo si existen varias razones que lo sustenten como: </p>
+
+        <ul class="list-group">
+            <li class="list-group-item">i.	Inspección de condiciones ambientales del equipo: Humedad, vibraciones mecánicas, polvo, seguridad de la instalación eléctrica, temperatura</li>
+            <li class="list-group-item">ii.	Inspección externa e interna del equipo. </li>
+            <li class="list-group-item">iii.	Limpieza externa e interna del equipo.  </li>
+            <li class="list-group-item">iv.	Lubricación y engrase de partes del equipo.  </li>
+            <li class="list-group-item">v.	Reemplazo de ciertas partes del equipo. </li>
+            <li class="list-group-item">vi.	Ajuste y calibración de partes del equipo.  </li>
+            <li class="list-group-item">vii.	Inspección de seguridad eléctrica.  </li>
+            <li class="list-group-item">viii.	Pruebas de funcionamiento. </li>
+        </ul>
+
+        <h3 class="pt-2">DESCRIPCIÓN DEL PROCEDIMIENTO </h3>
+        <p>Inicia el procedimiento </p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5 class="font-weight-bold">Detectar necesidades de mantenimiento: </h5>
+                <p>Con base en el programa de mantenimiento el titular del departamento determina que un equipo biomédico requiere mantenimiento y 
+                    se comunica con el encargado del servicio y propone fecha para la realización del mismo.</p>
+            </li>
+            <li class="list-group-item">    <h5 class="font-weight-bold">Recolección de equipo: </h5>
+                <p>El día acordado el personal encargado acude al área usuaria a recoger el equipo.</p></li>
+            <li class="list-group-item">    <h5 class="font-weight-bold">Traslado del equipo:  </h5>
+                <p>El personal asignado traslada el equipo a los talleres de mantenimiento.</p></li>
+            <li class="list-group-item"><h5 class="font-weight-bold">Mantenimiento del equipo y elaboración de orden de servicio:  </h5>
+                <p>Al llegar el equipo el personal asignado realiza un análisis visual y revisa el funcionamiento, posteriormente se limpia la suciedad y se lubrica. De considerarlo necesario se hace cambio de piezas dañadas o deterioradas. Al concluir el mantenimiento, el personal encargado del mismo realiza el llegado de la orden de servicio anotando los datos del equipo y las características y observaciones del trabajo ejecutado.
+</p> </li>
+            <li class="list-group-item"><h5 class="font-weight-bold">Traslado del equipo:  </h5>
+                <p>El equipo es regresado al área por el personal encargado.</p></li>
+            <li class="list-group-item"><h5 class="font-weight-bold">Recepción de equipo:   </h5>
+                <p>El personal asignado recibe el equipo y revisa que funcione correctamente.</p> </li>
+            <li class="list-group-item"><h5 class="font-weight-bold">Firma acuse de recibo   </h5>
+                <p>El personal responsable del equipo firma de recibido en la orden de servicio</p>  </li>
+            <li class="list-group-item"><h5 class="font-weight-bold">Archivo de documentos:  </h5>
+                <p>El personal del área recibe la orden de servicio y la entrega para archivar.</p> </li>
+        </ul>
+ <p>Termina el procedimiento</p>
+
+    </div>
+    </div>
+  </div>
+
+</div>
+
     <div class="card card-success">
         <div class="card-header">
             <h3 class="card-title">Tipo de Mantenimiento</h3>

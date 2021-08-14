@@ -76,6 +76,30 @@
         <!-- /.card-body -->
     </div>
 
+
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">Descripción Equipo</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-4 col-form-label">descripción</label>
+                            <div class="col-sm-8">
+                              <textarea class="form-control" id="descripcion" name="descripcion" rows="3">{{$equipos->descripcion}}</textarea>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+
     <div class="card card-success">
         <div class="card-header">
             <h3 class="card-title">Caracteristicas Propias del Equipo</h3>

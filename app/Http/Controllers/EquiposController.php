@@ -83,6 +83,9 @@ class EquiposController extends Controller
         $equipos->anexomodelo = $request->get('anexomodelo');
         $equipos->anexoactivo = $request->get('anexoactivo');
 
+
+        $equipos->descripcion = $request->get('descripcion');
+
         $equipos->save();
        
         $request->session()->flash('Equipo_Creado', 'El Equipo Biomedico ha sido creado con éxito');
@@ -171,6 +174,7 @@ class EquiposController extends Controller
         $equipos->anexoserie = $request->get('anexoserie');
         $equipos->anexomodelo = $request->get('anexomodelo');
         $equipos->anexoactivo = $request->get('anexoactivo');
+        $equipos->descripcion = $request->get('descripcion');
 
         $equipos->save();
        
