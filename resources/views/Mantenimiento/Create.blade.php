@@ -9,24 +9,6 @@
 @section('content')
 
 
-<div class="container">
-    <div class="row ">
-        <div class="col-12">
-            <div class="col-12">
-                <img src="{{asset('img/logoempresa.jpeg')}}" class="product-image" alt="Product Image"
-                    style="max-width: 400px; margin-left: 30%;">
-            </div>
-        </div>
-        <div class="col-12 text-center">
-            <h5>NIT. 900483816-1</h5>
-            <h5>GLOBAL INGENIERIA SUMINISTROS Y TECNOLOGIA BIOMEDICA SAS</h5>
-            <h5>CALLE 23A # 10A - 43 MALAGA SANTANDER</h5>
-            <hr>
-
-        </div>
-    </div>
-
-</div>
 
 <form action="/Mantenimiento" method="POST">
     @csrf
