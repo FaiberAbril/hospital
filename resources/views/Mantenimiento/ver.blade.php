@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <h4>Fecha : <small>{{$mantenimientos->FechaMantenimientoa}}</small></h4>
+                        <h4>Fecha : <small>{{$mantenimientos->FechaMantenimiento}}</small></h4>
                         <h4>Tipo de Mantenimiento : <small>{{$mantenimientos->TipoMantenimiento}}</small></h4>
                         <h4>Nombre : <small>{{$mantenimientos->Equipo->nombre}}</small></h4>
                         <h4>Serie : <small>{{$mantenimientos->Equipo->serie}}</small></h4>
