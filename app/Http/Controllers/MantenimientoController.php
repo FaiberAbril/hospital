@@ -58,7 +58,7 @@ class MantenimientoController extends Controller
 
         $mantenimientos = new Mantenimiento();
 
-        $mantenimientos->FechaMantenimiento = $request->get('FechaMantenimiento');
+        $mantenimientos->FechaMantenimiento =  date('Y-m-d');
         $mantenimientos->TipoMantenimiento = $request->get('TipoMantenimiento');
         $mantenimientos->Fallas = $request->get('Fallas');
         $mantenimientos->descripcion = $request->get('descripcion');
@@ -69,6 +69,18 @@ class MantenimientoController extends Controller
         $mantenimientos->cantidaddos = $request->get('cantidaddos');
         $mantenimientos->Repuestotres = $request->get('Repuestotres');
         $mantenimientos->cantidadtres = $request->get('cantidadtres');
+        $mantenimientos->cliente = $request->get('cliente');
+        $mantenimientos->rarea = $request->get('rarea');
+        $mantenimientos->telefono = $request->get('telefono');
+        $mantenimientos->direccion = $request->get('direccion');
+        $mantenimientos->ciudad = $request->get('ciudad');
+        $mantenimientos->nriesgo = $request->get('nriesgo');
+        $mantenimientos->fallasreportadas = $request->get('fallasreportadas');
+        $mantenimientos->tmantenimiento = $request->get('tmantenimiento');
+        $mantenimientos->tecnico = $request->get('tecnico');
+        $mantenimientos->tectelefono = $request->get('tectelefono');
+        $mantenimientos->diganostico = $request->get('diganostico');
+        $mantenimientos->herramientas = $request->get('herramientas');
 
         $mantenimientos->equipo_id = $request->get('equipo_id');
         $checkbox = "";
