@@ -45,6 +45,7 @@
                         <h4>Voltaje : <small>{{$mantenimientos->Equipo->voltaje}}</small></h4>
                         <h4>Modelo : <small>{{$mantenimientos->Equipo->modelo}}</small></h4>
                         <h4>Frecuencia : <small>{{$mantenimientos->Equipo->frecuencia}}</small></h4>
+                        <h4>descripción : <small>{{$mantenimientos->Equipo->descripcion}}</small></h4>
                     </div>
                 </div>
 </br>

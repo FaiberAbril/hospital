@@ -123,6 +123,7 @@
                         <h4>Voltaje : <small>{{$equipo->voltaje}}</small></h4>
                         <h4>Modelo : <small>{{$equipo->modelo}}</small></h4>
                         <h4>Frecuencia : <small>{{$equipo->frecuencia}}</small></h4>
+                        <h4>descripción : <small>{{$equipo->descripcion}}</small></h4>
                     </div>
                 </div>
                 </br>
