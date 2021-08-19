@@ -69,10 +69,12 @@
                     <th scope="col">Marca</th>
                     <th scope="col">Modelo</th>
                     <th scope="col">Serie</th>
+                    <th scope="col">próximo Mantenimiento</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
+                     
                 @foreach($equipos as $equipo)
                 <tr>
                     <td>{{$equipo->id}}</td>
@@ -82,6 +84,26 @@
                     <td>{{$equipo->marca}}</td>
                     <td>{{$equipo->modelo}}</td>
                     <td>{{$equipo->series}}</td>
+                    <td>
+                    <div class="progress-group">
+                        <span class="float-right"><b>{{ $equipo->diaspas()  }}</b>/{{ $equipo->dias()}}</span>
+                      <div class="progress progress-sm">
+                      @if ($equipo->porcentaje() < 5 )
+                      <div class="progress-bar bg-primary" style="width: {{ $equipo->porcentaje()}}%"></div>
+                      @elseif ($equipo->porcentaje() >= 5 and $equipo->porcentaje() <= 24 )
+                      <div class="progress-bar bg-primary" style="width: {{ $equipo->porcentaje()}}%"></div>
+                        @elseif ($equipo->porcentaje() >= 25 and $equipo->porcentaje() <= 48 )
+                        <div class="progress-bar bg-success" style="width: {{ $equipo->porcentaje()}}%"></div>
+                        @elseif ($equipo->porcentaje() > 48 and $equipo->porcentaje() <= 76)
+                        <div class="progress-bar bg-warning" style="width: {{ $equipo->porcentaje()}}%"></div>
+                        @else
+                        <div class="progress-bar bg-danger" style="width: {{ $equipo->porcentaje()}}%"></div>
+                        @endif
+
+                      </div>
+                    </div>
+
+                    </td>
                     <td>
                         <a href="Equipos/{{$equipo->id}}" class="btn btn-info">Visualizar</a>
                         <a href="Mantenimientos/{{$equipo->id}}" class="btn btn-success">Mantenimiento</a>

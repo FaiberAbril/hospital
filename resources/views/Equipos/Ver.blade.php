@@ -55,6 +55,13 @@
     </div>
  </div>
 
+
+ <div class="container callout callout-info">
+    <div class="row ">
+        <h2 style="margin-left: 10%;">Descripción : <small>{{$equipos->descripcion}}</small></h2>
+    </div>
+ </div>
+
  <div class="container callout callout-info">
     <div class="row ">
         <h2 style="margin-left: 10%;">Fuente de Alimentacion : <small>{{$equipos->fuenteAlimentacion}}</small></h2>

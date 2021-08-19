@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Equipo;
 use Illuminate\Support\Facades\Session;
+use App\Models\Mantenimiento;
 
 class EquiposController extends Controller
 {
@@ -20,8 +21,7 @@ class EquiposController extends Controller
     public function index()
     {
         $equipos = Equipo::all();
-        return view('Equipos.index')->with('equipos',$equipos);
-    
+        return view('Equipos.index', compact('equipos'));
     }
 
     /**
@@ -82,6 +82,9 @@ class EquiposController extends Controller
         $equipos->anexoserie = $request->get('anexoserie');
         $equipos->anexomodelo = $request->get('anexomodelo');
         $equipos->anexoactivo = $request->get('anexoactivo');
+
+
+        $equipos->descripcion = $request->get('descripcion');
 
         $equipos->save();
        
@@ -171,6 +174,7 @@ class EquiposController extends Controller
         $equipos->anexoserie = $request->get('anexoserie');
         $equipos->anexomodelo = $request->get('anexomodelo');
         $equipos->anexoactivo = $request->get('anexoactivo');
+        $equipos->descripcion = $request->get('descripcion');
 
         $equipos->save();
        
