@@ -81,6 +81,8 @@ class MantenimientoController extends Controller
         $mantenimientos->tectelefono = $request->get('tectelefono');
         $mantenimientos->diganostico = $request->get('diganostico');
         $mantenimientos->herramientas = $request->get('herramientas');
+        $mantenimientos->pmantenimiento = $request->get('pmantenimiento');
+
 
         $mantenimientos->equipo_id = $request->get('equipo_id');
         $checkbox = "";
@@ -97,6 +99,10 @@ class MantenimientoController extends Controller
         $mantenimientos->save();
 
         $equipo = Equipo::find($mantenimientos->equipo_id);
+        $equipo ->fechamantenimiento = date('Y-m-d');
+        $equipo->proximomantenimiento = $request->get('pmantenimiento');
+        $equipo->save();
+
         $mantenimientos = Mantenimiento::where('equipo_id', $mantenimientos->equipo_id)->get();
 
         $request->session()->flash('Mantenimiento_creado', 'Se Realizo mantenimiento');

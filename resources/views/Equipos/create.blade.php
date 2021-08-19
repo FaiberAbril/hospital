@@ -57,7 +57,7 @@
         <div class="card-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">descripción</label>
                             <div class="col-sm-10">

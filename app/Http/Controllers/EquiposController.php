@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Equipo;
 use Illuminate\Support\Facades\Session;
+use App\Models\Mantenimiento;
 
 class EquiposController extends Controller
 {
@@ -20,8 +21,7 @@ class EquiposController extends Controller
     public function index()
     {
         $equipos = Equipo::all();
-        return view('Equipos.index')->with('equipos',$equipos);
-    
+        return view('Equipos.index', compact('equipos'));
     }
 
     /**

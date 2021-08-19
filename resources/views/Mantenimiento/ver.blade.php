@@ -86,6 +86,10 @@
                     <h4>HERRAMIENTAS UTILIZADAS:  </h4>
                     <p>{{$mantenimientos->herramientas}}</p>
                 </div>
+                <div class="col-12">
+                    <h4>Próximo mantenimiento:  </h4> 
+                    <p>{{$mantenimientos->pmantenimiento }}</p>
+                </div>
             </div>
 
             </div>
@@ -132,7 +136,7 @@
 
     <div class="card card-success">
         <div class="card-header">
-        <h3 class="card-title">Repuestos</h3>
+        <h3 class="card-title"></h3>
         </div>
         <div class="card-body">
             <a href="{{ route('Mantenimiento.inicio',$mantenimientos->Equipo->id) }}" class="btn btn-success">Volver</a>
